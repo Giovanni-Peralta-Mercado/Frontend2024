@@ -1,66 +1,49 @@
-
-import { useState } from "react"
+import { useForm } from "./Hooks/useForm"
 
 function App() {
-
-  const [inputsForm,setImputsForm]=useState({
+  const[InputsForm,HandleInputChange,FormReset] = useForm({
     username:"",
-    password:""
+    password:"",
   })
 
-
-  const handleInputChange=(event)=>{
-    setImputsForm({
-      ...inputsForm,
-      [event.target.name]:event.target.value
-    })
-  }
-
-
-  const handleSubmit=(e)=>{
+  const HandleSubmit = (e) => {
     e.preventDefault()
-    console.log("Mi usuario es: ",inputsForm.username)
-    console.log("Mi contraseña es: ",inputsForm.password)
-    setImputsForm({
-      username:"",
-      password:""
-    })
-    
+    console.log("Mi nombre de usuario es: ",InputsForm.username)
+    console.log("y mi contraseña es: ",InputsForm.password)
+    FormReset()
   }
+  
 
   return (
     <div>
       <h1>Input</h1>
       <hr />
-    <form onSubmit={(e)=>handleSubmit(e)}>
-      <div>
-        <label htmlFor="username"> Username </label>
+      <form onSubmit={(e)=>HandleSubmit(e)}>
+        <div>
+        <label htmlFor="username">Username</label>
         <input 
-        id="username" 
+        id="username"
         name="username"
-        type="text" 
-        value={inputsForm.username}
-        onChange={(event)=>handleInputChange(event)}
+        type="text"
+        value={InputsForm.username}
+        onChange={(event)=>HandleInputChange(event)}
         />
-      </div>
-      <div>
-        <label htmlFor="password"> Password </label>
-        <input 
-        id="password" 
+        </div>
+        <div>
+        <label htmlFor="password">Password</label>
+        <input
+        id="password"
         name="password"
         type="password" 
-        value={inputsForm.password}
-        onChange={(event)=>handleInputChange(event)}
+        value={InputsForm.password}
+        onChange={(event)=>HandleInputChange(event)}
         />
-      </div>
-      <div>
-        <button type="submit">
-          Submit
-        </button>
-      </div>
-    </form>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
-    
   )
 }
 
