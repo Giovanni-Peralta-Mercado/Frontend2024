@@ -22,7 +22,10 @@ function App() {
       />
       <hr  />
         <div className="text-end">
-          <AddTaskModal taskList={taskList} setTaskList={setTaskList}/>
+          <AddTaskModal 
+          taskList={taskList} 
+          setTaskList={setTaskList}
+          />
           <button 
           type="button"
           className="btn btn-outline-primary"
