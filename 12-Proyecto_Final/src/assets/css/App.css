@@ -1,0 +1,63 @@
+body {
+  background-image: url('../images/ingredients-making-guakamole.jpg'); /* Ruta de la imagen del patrón */
+  background-size: cover;        /* La imagen cubrirá toda el área del fondo */
+  background-position: center;   /* La imagen estará centrada */
+  background-repeat: no-repeat;  /* Evita que la imagen se repita */
+  background-attachment: fixed;  /* Hace que la imagen de fondo permanezca fija al hacer scroll */
+}
+
+.App {
+    text-align: center;
+  }
+  
+  
+  img {
+    max-width: 400px;
+    border-radius: 50px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  div {
+    margin: 10px;
+  }
+
+  .custom-label {
+    color: #ffffff; /* Cambia este valor por el color que desees */
+  }
+
+  .custom-img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .swal2-icon {
+    margin: 0 auto; 
+    margin-top: 1rem; 
+    padding: 1rem; 
+  }
+  
+  .icon-margin {
+    margin-right: 5px;
+  }
+
+.dropdown-menu-custom {
+  width: 91%;
+  position: absolute;
+  top: 100%;
+  left: 40px;
+  z-index: 1;
+}
+
+.view-recipe-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; 
+}
+
+.checkbox-label {
+  margin-right: 15px; 
+}
